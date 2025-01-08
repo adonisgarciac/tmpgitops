@@ -1,0 +1,16 @@
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: ClusterCurator
+metadata:
+  name: local-cluster
+  namespace: local-cluster
+spec:
+  desiredCuration: upgrade
+  destroy:
+    jobMonitorTimeout: 5
+  install:
+    jobMonitorTimeout: 5
+  scale:
+    jobMonitorTimeout: 5
+  upgrade:
+    desiredUpdate: 4.15.40
+    monitorTimeout: 120
